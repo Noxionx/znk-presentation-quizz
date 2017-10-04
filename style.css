@@ -1,0 +1,96 @@
+*, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+.go-down,
+.go-up {
+  position: absolute;
+  text-decoration: none;
+  color: #999;
+}
+.go-down:hover,
+.go-up:hover {
+  color: #888;
+}
+.go-down:active,
+.go-up:active {
+  color: #666;
+}
+.go-down {
+  bottom: 16px;
+}
+.go-up {
+  top: 16px;
+}
+.fullscreen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: lightblue;
+  text-align: center;
+}
+.fullscreen > h1 {
+  padding-top: 12%;
+  font-size: 4em;
+}
+.fullscreen > h2 {
+  font-size: 2.5em;
+}
+.fullscreen > p {
+  margin: 0 20%;
+  font-size: 1.8em;
+}
+.fullscreen > .divider {
+  margin: 16px auto;
+  width: 20%;
+  border: solid 1px gray;
+}
+.question {
+  position: relative;
+  text-align: center;
+  height: 100%;
+  border-bottom: solid 1px lightgray;
+  border-top: solid 1px lightgray;
+}
+.question > div.background {
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  opacity: 0.8;
+  background-position: center;
+  background-size: cover;
+}
+#q1 > div.background {
+  background-image: url("img/studio.jpg");
+}
+#q2 > div.background {
+  background-image: url("img/moba.jpg");
+}
+#q3 > div.background {
+  background-image: url("img/beer.jpg");
+}
+
+.question > span {
+  position: absolute;
+  padding: 16px;
+  border-radius: 15px;
+  border: solid 1px #333;
+  background-color: white;
+  max-width: 35%;
+}
+.question > span.info::before {
+  content: "";
+
+}
+.question > span.info {
+  top: 32px;
+  left: 32px;
+}
+.question > span.test {
+  bottom: 64px;
+  right: 64px;
+  min-width: 20%;
+}
