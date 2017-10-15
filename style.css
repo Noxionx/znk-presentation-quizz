@@ -12,11 +12,13 @@ a {
 .go-down,
 .go-up {
   position: absolute;
+  margin-left: -28px;
   color: #FFF;
   border-radius: 50%;
   width: 56px;
   height: 56px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition: box-shadow .3s;
 }
 .go-down:hover,
 .go-up:hover {
@@ -41,24 +43,37 @@ a {
   width: 100%;
   height: 100%;
   min-height: 700px;
-  background: lightblue;
   text-align: center;
 }
-.fullscreen > h1 {
+.fullscreen h1 {
   padding-top: 12%;
-  font-size: 4em;
+  font-size: 4rem;
 }
-.fullscreen > h2 {
-  font-size: 2.5em;
+.fullscreen h2 {
+  font-size: 2.5rem;
 }
-.fullscreen > p {
+.fullscreen p {
   margin: 0 20%;
-  font-size: 1.8em;
+  font-size: 1.8rem;
 }
-.fullscreen > .divider {
+.fullscreen .divider {
   margin: 16px auto;
   width: 20%;
   border: solid 1px gray;
+}
+.fullscreen > div.background {
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  opacity: 0.8;
+  background-position: center;
+  background-size: cover;
+  background-image:linear-gradient(white, #2196F3);
+}
+.fullscreen .content {
+  position: relative;
 }
 .quizz-box {
   position: relative;
@@ -88,26 +103,29 @@ a {
   background-image: url("img/beer.jpg");
 }
 
-.quizz-box > span {
-  position: absolute;
+.quizz-content {
+  height: 100%;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 128px;
+}
+
+.quizz-content > span {
+  position: relative;
+  display: inline-block;
   padding: 16px;
+  margin: 16px auto;
   border-radius: 2px;
   background-color: white;
-  max-width: 35%;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
-.quizz-box > span.info::before {
-  content: "";
-
-}
-.quizz-box > span.info {
-  top: 32px;
+/*.quizz-box > span.info {
+  top: 64px;
   left: 32px;
-}
-.quizz-box > span.test {
-  bottom: 64px;
-  right: 64px;
-  min-width: 20%;
+}*/
+.quizz-content > span.test {
+  min-width: 60%;
 }
 
 .quizz-box .question {
@@ -116,9 +134,27 @@ a {
 
 .quizz-box .hint {
   font-style: italic;
-  font-size: 0.8em;
+  font-size: 0.8rem;
 }
 
 .quizz-box .responses {
   padding: 16px;
+}
+
+.quizz-box .responses .response {
+  cursor: pointer;
+  border: solid 1px lightgray;
+  background-color: #FFF;
+  padding: 8px 16px;
+  margin: 8px;
+  transition: box-shadow .3s, background-color .3s;
+
+}
+
+.quizz-box .responses .response:hover {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.result-title {
+  font-weight: bold;
 }

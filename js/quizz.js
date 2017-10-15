@@ -10,33 +10,55 @@ var data = {
 				'FL Studio'
 			],
 			response: 'Audacity',
-			win: {
-				text: 'Gagné !',
+			result: {
+				text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
 				img: ''
-			},
-			loose: {
-				text: 'Perdu !',
+			}
+		},
+		tempo: {
+			question: 'Quel est le sigle (ou abréviation) pour exprimer le tempo ?',
+			hint: 'On s\'en sert aussi pour exprimer le rythme cardiaque',
+			choices: [
+				'TPMP',
+				'APM',
+				'BPM',
+				'TPS'
+			],
+			response: 'BPM',
+			result: {
+				text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
 				img: ''
 			}
 		}
 	},
 	games: {
 		moba: {
+			question: 'Lequel de ces jeux n\'est pas un MOBA ?',
+			hint: '<a target="_blank" href="http://lmgtfy.com/?q=Moba">Besoin d\'info ?</a>',
+			choices: [
+				'Smite',
+				'League of Legends',
+				'Paragon',
+				'Warcraft 3'
+			],
+			response: 'Warcraft 3',
+			result: {
+				text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+				img: ''
+			}
+		},
+		other: {
 			question: 'Lequel de ces jeux n\'est pas un Moba ?',
 			hint: 'Moba : Jeux multijoueur en equipe à 5 contre 5. <a target="_blank" href="http://lmgtfy.com/?q=Moba">+ d\'info</a>',
 			choices: [
 				'Smite',
 				'League of Legends',
-				'Dota',
+				'Paragon',
 				'Warcraft 3'
 			],
 			response: 'Warcraft 3',
-			win: {
-				text: 'Gagné !',
-				img: ''
-			},
-			loose: {
-				text: 'Perdu !',
+			result: {
+				text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
 				img: ''
 			}
 		}
@@ -52,12 +74,23 @@ var data = {
 				'La Chimay'
 			],
 			response: 'La Goudale',
-			win: {
-				text: 'Gagné !',
+			result: {
+				text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
 				img: ''
-			},
-			loose: {
-				text: 'Perdu !',
+			}
+		},
+		ipa: {
+			question: 'Que signifie IPA ?',
+			hint: 'C\'est un type de bière',
+			choices: [
+				'Instrument de Pauvre Alcoolique',
+				'Internet Privacy Act',
+				'Irish Pale Ale',
+				'India Pale Ale'
+			],
+			response: 'India Pale Ale',
+			result: {
+				text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
 				img: ''
 			}
 		}
@@ -65,6 +98,7 @@ var data = {
 }
 
 function generateQuizzHtml(quizzData) {
+	var played = false;
 	var contentElt = document.createElement('div');
 
 	var questionElt = document.createElement('div');
@@ -78,12 +112,20 @@ function generateQuizzHtml(quizzData) {
 	hintElt.innerHTML = quizzData.hint;
 
 	quizzData.choices.forEach(function(choice) {
+		var win = choice === quizzData.response
 		var responseElt = document.createElement('button');
+		responseElt.className = 'response' + (win ? ' win' : '');
 		responseElt.innerHTML = choice;
 		responseElt.addEventListener('click', function(){
-			var html = ((choice === quizzData.response) ? generateWinHtml(quizzData.win) : generateLooseHtml(quizzData.loose));
-			contentElt.innerHTML = '';
-			contentElt.appendChild(html);
+			if (!played) {
+				played = true;
+				responseElt.style.backgroundColor = win ? '#2ecc71' : '#e74c3c';
+				if (!win) {
+					var winElt = responsesElt.getElementsByClassName('win')[0];
+					winElt.style.backgroundColor ='#2ecc71';
+				}
+				contentElt.appendChild(generateResultHtml(quizzData, win));
+			}
 		});
 		responsesElt.appendChild(responseElt);
 	});
@@ -95,31 +137,22 @@ function generateQuizzHtml(quizzData) {
 	return contentElt;
 }
 
-function generateWinHtml(data) {
+function generateResultHtml(data, win) {
 	var container = document.createElement('div');
 	var img = document.createElement('img');
-	img.setAttribute('src', data.img);
+	img.className = 'result-img';
+	img.setAttribute('src', data.result.img);
+	var winOrLost = document.createElement('div');
+	winOrLost.className = 'result-title';
+	winOrLost.innerHTML = win ? 'Gagné ! :-D' : 'Perdu ! X-(';
 	var text = document.createElement('div');
-	text.innerHTML = data.text;
+	text.className = 'result-text';
+	text.innerHTML = data.result.text;
 
 	if (data.img && data.img.length) {
 		container.appendChild(img);
 	}
-	container.appendChild(text);
-
-	return container;
-}
-
-function generateLooseHtml(data) {
-	var container = document.createElement('div');
-	var img = document.createElement('img');
-	img.setAttribute('src', data.img);
-	var text = document.createElement('div');
-	text.innerHTML = data.text;
-
-	if (data.img && data.img.length) {
-		container.appendChild(img);
-	}
+	container.appendChild(winOrLost);
 	container.appendChild(text);
 
 	return container;

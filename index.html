@@ -13,10 +13,13 @@
 <body>
   <section id="main">
     <div class="fullscreen">
-      <h1>Florent Gadé</h1>
-      <h2>(Noxionx)</h1>
-      <div class="divider"></div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maximus convallis neque, sit amet consectetur velit fringilla nec. Phasellus ac est ex. Donec auctor, sem sit amet pharetra ultrices, sem purus ultrices ligula, sed elementum ex elit ac enim. Integer condimentum dui ac scelerisque malesuada. Maecenas non odio in nisl ornare semper at vitae libero. Pellentesque pellentesque nulla eu sollicitudin ullamcorper.</p>
+      <div class="background"></div>
+      <div class="content">
+        <h1>Florent Gadé</h1>
+        <h2>(Noxionx)</h1>
+        <div class="divider"></div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maximus convallis neque, sit amet consectetur velit fringilla nec. Phasellus ac est ex. Donec auctor, sem sit amet pharetra ultrices, sem purus ultrices ligula, sed elementum ex elit ac enim. Integer condimentum dui ac scelerisque malesuada. Maecenas non odio in nisl ornare semper at vitae libero. Pellentesque pellentesque nulla eu sollicitudin ullamcorper.</p>
+      </div>
       <a data-href="q1" class="go-down"><i class="fa fa-4x fa-chevron-circle-down"></i></a>
     </div>
   </section>
@@ -24,25 +27,34 @@
     <div id="q1" class="quizz-box">
       <div class="background"></div>
       <a data-href="main" class="go-up"><i class="fa fa-4x fa-chevron-circle-up"></i></a>
-      <span class="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maximus convallis neque, sit amet consectetur velit fringilla nec.</span>
-      <span data-quizz="music.software" class="test"></span>
+      <div class="quizz-content">
+        <span class="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maximus convallis neque, sit amet consectetur velit fringilla nec.</span>
+        <span data-quizz="music.software" class="test"></span>
+        <span data-quizz="music.tempo" class="test"></span>
+      </div>
       <a data-href="q2" class="go-down"><i class="fa fa-4x fa-chevron-circle-down"></i></a>
     </div>
     <div id="q2" class="quizz-box">
       <div class="background"></div>
       <a data-href="q1" class="go-up"><i class="fa fa-4x fa-chevron-circle-up"></i></a>
-      <span class="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque</span>
-      <span data-quizz="games.moba" class="test"></span>
+      <div class="quizz-content">
+        <span class="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maximus convallis neque, sit amet consectetur velit fringilla nec.</span>
+        <span data-quizz="games.moba" class="test"></span>
+      </div>
       <a data-href="q3" class="go-down"><i class="fa fa-4x fa-chevron-circle-down"></i></a>
     </div>
     <div id="q3" class="quizz-box">
       <div class="background"></div>
       <a data-href="q2" class="go-up"><i class="fa fa-4x fa-chevron-circle-up"></i></a>
-      <span class="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maximus convallis neque, sit amet consectetur velit fringilla nec.</span>
-      <span data-quizz="beer.country" class="test"></span>
+      <div class="quizz-content">
+        <span class="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maximus convallis neque, sit amet consectetur velit fringilla nec.</span>
+        <span data-quizz="beer.country" class="test"></span>
+        <span data-quizz="beer.ipa" class="test"></span>
+      </div>
     </div>
   </section>
 </body>
 <script type="text/javascript" src="js/quizz.js"></script>
-<script type="text/javascript" src="smoothScroll.js"></script>
+<script type="text/javascript" src="js/smoothScroll.js"></script>
+<script type="text/javascript" src="js/backgroundAnimation.js"></script>
 </html>
