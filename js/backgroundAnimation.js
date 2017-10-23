@@ -54,9 +54,9 @@ function drawPath(delay, range_step) {
     for(var i=0; i<=width; i=i+10){
         var p = 2 * Math.PI * (1/t);
         var y = (range * Math.sin(((i+delay)/360)*p))+offset;
-        if(mousetravel){
+        /*if(mousetravel){
             y += (Math.random()-0.5)*mousetravel;
-        }
+        }*/
         if(i==0){
             ctx.moveTo(0, y);
         }
