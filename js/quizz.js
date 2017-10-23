@@ -124,7 +124,7 @@ function generateQuizzHtml(quizzData) {
 					var winElt = responsesElt.getElementsByClassName('win')[0];
 					winElt.style.backgroundColor ='#2ecc71';
 				}
-				contentElt.appendChild(generateResultHtml(quizzData, win));
+				//contentElt.appendChild(generateResultHtml(quizzData, win));
 			}
 		});
 		responsesElt.appendChild(responseElt);
