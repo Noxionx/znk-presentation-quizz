@@ -97,6 +97,25 @@ var data = {
 	}
 }
 
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
 function generateQuizzHtml(quizzData) {
 	var played = false;
 	var contentElt = document.createElement('div');
@@ -111,7 +130,7 @@ function generateQuizzHtml(quizzData) {
 	questionElt.innerHTML = quizzData.question;
 	hintElt.innerHTML = quizzData.hint;
 
-	quizzData.choices.forEach(function(choice) {
+	shuffle(quizzData.choices).forEach(function(choice) {
 		var win = choice === quizzData.response
 		var responseElt = document.createElement('button');
 		responseElt.className = 'response' + (win ? ' win' : '');
