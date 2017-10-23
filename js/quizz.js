@@ -4,12 +4,12 @@ var data = {
 			question: 'Quel logiciel ne permet pas la production musicale ?',
 			hint: 'On parle de production de musique, pas de bruit ;)',
 			choices: [
-				'Audacity',
+				'Pinnacle Studio',
 				'Reason',
 				'Ableton',
 				'FL Studio'
 			],
-			response: 'Audacity',
+			response: 'Pinnacle Studio',
 			result: {
 				text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
 				img: ''
