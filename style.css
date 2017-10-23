@@ -125,6 +125,13 @@ a {
 .quizz-content > span.test {
   min-width: 60%;
 }
+.quizz-content > span.info {
+  font-size: 1.3em;
+}
+.quizz-content > span.info i {
+  opacity: 0.5;
+  margin-right: 8px;
+}
 
 .quizz-box .question {
   font-weight: bold;
