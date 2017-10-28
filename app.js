@@ -21,6 +21,9 @@ app.use(express.static(path.join(__dirname, './public')));
 import quizzRoutes from './routes/quizzRoutes';
 app.use('/quizz', quizzRoutes);
 
+//Error Handler
+import errorHandler from './utils/errorsUtils'
+app.use(errorHandler);
 
 // Redirect other page
 app.use((req, res) => {
