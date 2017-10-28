@@ -1,16 +1,16 @@
-export function getData() {
+export function getData () {
   return {
     music: {
       software: {
         question: 'Quel logiciel ne permet pas la production musicale ?',
         hint: 'On parle de production de musique, pas de bruit ;)',
         choices: [
-          'Pinnacle Studio',
+          'Audacity',
           'Reason',
           'Ableton',
           'FL Studio'
         ],
-        response: 'Pinnacle Studio',
+        response: 'Audacity',
       },
       tempo: {
         question: 'Quel est le sigle (ou abréviation) pour exprimer le tempo ?',
@@ -21,11 +21,7 @@ export function getData() {
           'BPM',
           'TPS'
         ],
-        response: 'BPM',
-        result: {
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          img: ''
-        }
+        response: 'BPM'
       }
     },
     games: {
@@ -36,15 +32,11 @@ export function getData() {
           'Smite',
           'League of Legends',
           'Paragon',
-          'Warcraft 3'
+          'Starcraft'
         ],
-        response: 'Warcraft 3',
-        result: {
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          img: ''
-        }
+        response: 'Starcraft'
       },
-      other: {
+      apm: {
         question: 'Lequel de ces jeux n\'est pas un Moba ?',
         hint: 'Moba : Jeux multijoueur en equipe à 5 contre 5. <a target="_blank" href="http://lmgtfy.com/?q=Moba">+ d\'info</a>',
         choices: [
@@ -53,11 +45,7 @@ export function getData() {
           'Paragon',
           'Warcraft 3'
         ],
-        response: 'Warcraft 3',
-        result: {
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          img: ''
-        }
+        response: 'Warcraft 3'
       }
     },
     beer: {
@@ -70,11 +58,7 @@ export function getData() {
           'La Gulden Draak',
           'La Chimay'
         ],
-        response: 'La Goudale',
-        result: {
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          img: ''
-        }
+        response: 'La Goudale'
       },
       ipa: {
         question: 'Que signifie IPA ?',
@@ -85,11 +69,18 @@ export function getData() {
           'Irish Pale Ale',
           'India Pale Ale'
         ],
-        response: 'India Pale Ale',
-        result: {
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          img: ''
-        }
+        response: 'India Pale Ale'
+      },
+      craft: {
+        question: 'Les bières d\'abbaye sont fabriquées par..',
+        hint: 'Question piège...',
+        choices: [
+          'Des moines',
+          'Des brasseries',
+          'Des curés',
+          'Des russes'
+        ],
+        response: 'Des brasseries'
       }
     }
   };
