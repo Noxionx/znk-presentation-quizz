@@ -19,7 +19,9 @@ app.use(express.static(path.join(__dirname, './public')));
 
 // API
 import quizzRoutes from './routes/quizzRoutes';
+import resultsRoutes from './routes/resultsRoutes';
 app.use('/quizz', quizzRoutes);
+app.use('/results', resultsRoutes);
 
 //Error Handler
 import errorHandler from './utils/errorsUtils'
