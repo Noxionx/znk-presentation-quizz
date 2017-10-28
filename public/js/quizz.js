@@ -28,6 +28,19 @@ function shuffle(array) {
   return array;
 }
 
+function animateRightAnswer(elt) {
+  var delay = 400;
+  setTimeout(() => {
+    elt.style.backgroundColor ='#2ecc71';
+  }, delay)
+  setTimeout(() => {
+    elt.style.backgroundColor ='#ffffff';
+  }, delay + 150)
+  setTimeout(() => {
+    elt.style.backgroundColor ='#2ecc71';
+  }, delay + 300)
+}
+
 function generateQuizzHtml(quizzData) {
 	var played = false;
 	var contentElt = document.createElement('div');
@@ -52,8 +65,8 @@ function generateQuizzHtml(quizzData) {
 				played = true;
 				responseElt.style.backgroundColor = win ? '#2ecc71' : '#e74c3c';
 				if (!win) {
-					var winElt = responsesElt.getElementsByClassName('win')[0];
-					winElt.style.backgroundColor ='#2ecc71';
+          var winElt = responsesElt.getElementsByClassName('win')[0];
+          animateRightAnswer(winElt);
 				}
 				//contentElt.appendChild(generateResultHtml(quizzData, win));
 			}
