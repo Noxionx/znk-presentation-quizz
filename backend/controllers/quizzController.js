@@ -23,6 +23,17 @@ export default function getData () {
         ],
         response: 'BPM',
       },
+      family: {
+        question: 'Le saxophone fait partie de quelle famille d\'instruments ?',
+        hint: 'Un peu de culture générale !',
+        choices: [
+          'Bois',
+          'Cuivres',
+          'Cordes',
+          'Percussions',
+        ],
+        response: 'Bois',
+      },
     },
     games: {
       moba: {
@@ -36,16 +47,27 @@ export default function getData () {
         ],
         response: 'Starcraft',
       },
-      apm: {
-        question: 'Lequel de ces jeux n\'est pas un Moba ?',
-        hint: 'Moba : Jeux multijoueur en equipe à 5 contre 5. <a target="_blank" href="http://lmgtfy.com/?q=Moba">+ d\'info</a>',
+      hl: {
+        question: 'La série Half Life est développée par quel studio ?',
+        hint: '"Rise and shine Mister Freeman..."',
         choices: [
-          'Smite',
-          'League of Legends',
-          'Paragon',
-          'Warcraft 3',
+          'Ubisoft',
+          'Electronic Arts',
+          'Valve',
+          'Blizzard',
         ],
-        response: 'Warcraft 3',
+        response: 'Valve',
+      },
+      sell: {
+        question: 'Quel est le jeu le plus vendu de tout les temps ?',
+        hint: '"Shut up and take my money !"',
+        choices: [
+          'Minecraft',
+          'Tetris',
+          'GTA V',
+          'World of Warcraft',
+        ],
+        response: 'Tetris',
       },
     },
     beer: {
