@@ -20,7 +20,7 @@ const APP_PORT = 3000;
 const app = express();
 const http = httpServer(app);
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, './public')));
+app.use(express.static(path.join(__dirname, '../frontend')));
 
 // API
 app.use('/quizz', quizzRoutes);
