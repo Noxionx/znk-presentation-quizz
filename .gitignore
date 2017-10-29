@@ -3,3 +3,5 @@ yarn*
 
 package-lock.json
 tasks.json
+
+frontend/public/assets

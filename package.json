@@ -1,29 +1,22 @@
 {
   "name": "znk-presentation-quizz",
   "version": "1.0.0",
-  "main": "backend/app.js",
   "repository": "git@github.com:Noxionx/znk-presentation-quizz.git",
   "author": "Noxionx <nox35400@gmail.com>",
-  "license": "MIT",
-  "scripts": {
-    "start": "babel-node backend/app.js",
-    "dev": "nodemon backend/app.js --exec babel-node"
-  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-3": "^6.24.1",
     "eslint": "^4.10.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.4.0",
-    "nodemon": "^1.12.1",
-    "webpack": "^3.8.1"
+    "eslint-plugin-react": "^7.4.0"
   },
-  "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2",
-    "q": "^1.5.1"
+  "scripts": {
+    "install": "cd ./backend && npm i && cd ../frontend && npm i",
+    "dev:backend": "cd ./backend && npm run dev",
+    "dev:frontend": "cd ./frontend && npm run dev",
+    "build:frontend": "cd ./frontend && npm run build"
   }
 }

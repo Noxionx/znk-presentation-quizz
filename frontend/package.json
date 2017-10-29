@@ -1,0 +1,24 @@
+{
+  "name": "znk-presentation-quizz-frontend",
+  "version": "1.0.0",
+  "author": "Noxionx <nox35400@gmail.com>",
+  "scripts": {
+    "clean": "rm -rf public/assets/",
+    "build": "npm run clean && webpack --config webpack.config.prod.babel.js --progress --profile --colors",
+    "dev": "webpack-dev-server --content-base public/ --config webpack.config.dev.babel.js --inline"
+  },
+  "dependencies": {
+    "font-awesome": "^4.7.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.5",
+    "style-loader": "^0.19.0",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.3"
+  }
+}
