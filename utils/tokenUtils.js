@@ -4,9 +4,9 @@ export default function uniqToken (req, res, next) {
     console.log(token);
     next();
   } else {
-    throw {
+    throw new TypeError({
       statusCode: 400,
-      clientMessage: 'Missing token'
-    }
+      clientMessage: 'Missing token',
+    });
   }
 }

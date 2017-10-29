@@ -2,10 +2,10 @@ const results = [];
 
 function checkData (data) {
   if (!data.test) {
-    throw {
+    throw new TypeError({
       statusCode: 400,
-      clientMessage: 'Missing data'
-    }
+      clientMessage: 'Missing data',
+    });
   }
 }
 
@@ -14,6 +14,6 @@ export function getAll () {
 }
 
 export function add (data) {
-  checkData(data)
+  checkData(data);
   results.push(data);
 }

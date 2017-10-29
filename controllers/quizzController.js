@@ -1,4 +1,4 @@
-export function getData () {
+export default function getData () {
   return {
     music: {
       software: {
@@ -8,7 +8,7 @@ export function getData () {
           'Audacity',
           'Reason',
           'Ableton',
-          'FL Studio'
+          'FL Studio',
         ],
         response: 'Audacity',
       },
@@ -19,10 +19,10 @@ export function getData () {
           'TPMP',
           'APM',
           'BPM',
-          'TPS'
+          'TPS',
         ],
-        response: 'BPM'
-      }
+        response: 'BPM',
+      },
     },
     games: {
       moba: {
@@ -32,9 +32,9 @@ export function getData () {
           'Smite',
           'League of Legends',
           'Paragon',
-          'Starcraft'
+          'Starcraft',
         ],
-        response: 'Starcraft'
+        response: 'Starcraft',
       },
       apm: {
         question: 'Lequel de ces jeux n\'est pas un Moba ?',
@@ -43,10 +43,10 @@ export function getData () {
           'Smite',
           'League of Legends',
           'Paragon',
-          'Warcraft 3'
+          'Warcraft 3',
         ],
-        response: 'Warcraft 3'
-      }
+        response: 'Warcraft 3',
+      },
     },
     beer: {
       country: {
@@ -56,9 +56,9 @@ export function getData () {
           'La Chouffe',
           'La Goudale',
           'La Gulden Draak',
-          'La Chimay'
+          'La Chimay',
         ],
-        response: 'La Goudale'
+        response: 'La Goudale',
       },
       ipa: {
         question: 'Que signifie IPA ?',
@@ -67,9 +67,9 @@ export function getData () {
           'Instrument de Pauvre Alcoolique',
           'Internet Privacy Act',
           'Irish Pale Ale',
-          'India Pale Ale'
+          'India Pale Ale',
         ],
-        response: 'India Pale Ale'
+        response: 'India Pale Ale',
       },
       craft: {
         question: 'Les bières d\'abbaye sont fabriquées par..',
@@ -78,10 +78,10 @@ export function getData () {
           'Des moines',
           'Des brasseries',
           'Des curés',
-          'Des russes'
+          'Des russes',
         ],
-        response: 'Des brasseries'
-      }
-    }
+        response: 'Des brasseries',
+      },
+    },
   };
 }
