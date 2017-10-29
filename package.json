@@ -15,6 +15,7 @@
   },
   "scripts": {
     "install": "cd ./backend && npm i && cd ../frontend && npm i",
+    "init": "cd ./backend && npm run init",
     "dev:backend": "cd ./backend && npm run dev",
     "dev:frontend": "cd ./frontend && npm run dev",
     "build:frontend": "cd ./frontend && npm run build"

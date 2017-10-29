@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "start": "babel-node app/app.js",
-    "dev": "nodemon app/app.js --exec babel-node"
+    "dev": "nodemon app/app.js --exec babel-node",
+    "init": "babel-node app/scripts/createDB.js"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -19,6 +20,7 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "mysql": "^2.15.0",
     "q": "^1.5.1"
   }
 }
